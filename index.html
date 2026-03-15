@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Foto</title>
+  <meta name="description" content="One Foto - OneFotoBokeh.com and OneFotoFilm.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Nunito', 'Arial Black', Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* --- Shared panel styles --- */
+    .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: filter 0.3s ease;
+    }
+
+    .panel:hover {
+      filter: brightness(0.93);
+    }
+
+    /* --- Bokeh Panel (Left / Top) --- */
+    .panel-bokeh {
+      background-color: #3dba6e;
+      padding: 48px 52px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .bokeh-title {
+      font-family: 'Nunito', 'Arial Black', Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(44px, 4.8vw, 80px);
+      color: #eef5c2;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      padding-bottom: 8px;
+    }
+
+    /* --- Film Panel (Right / Bottom) --- */
+    .panel-film {
+      background-color: #c9a9a6;
+      padding: 48px 52px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .film-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .film-title {
+      font-family: 'Nunito', 'Arial Black', Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 3vw, 54px);
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+    }
+
+    /* --- Mobile: stack vertically --- */
+    @media (max-width: 767px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .panel {
+        flex: none;
+        height: 50vh;
+        min-height: 280px;
+      }
+
+      .panel-bokeh {
+        padding: 36px 40px;
+      }
+
+      .panel-film {
+        padding: 36px 40px;
+      }
+
+      .bokeh-title {
+        font-size: clamp(40px, 11vw, 60px);
+      }
+
+      .film-title {
+        font-size: clamp(26px, 7vw, 40px);
+      }
+
+      .film-logo svg {
+        width: 80px;
+        height: 105px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== OneFotoBokeh Panel ===== -->
+    <a href="https://www.onefotobokeh.com" class="panel panel-bokeh" target="_blank" rel="noopener noreferrer">
+
+      <!-- Logo: top-left -->
+      <svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="OneFotoBokeh logo">
+        <!-- Camera body -->
+        <rect x="1" y="10" width="38" height="28" rx="5" fill="#f5a623"/>
+        <!-- Viewfinder bump -->
+        <rect x="13" y="5" width="12" height="7" rx="2.5" fill="#f5a623"/>
+        <!-- Lens outer ring -->
+        <circle cx="20" cy="24" r="9" fill="white" opacity="0.35"/>
+        <!-- Lens inner -->
+        <circle cx="20" cy="24" r="6" fill="#f5a623"/>
+        <circle cx="20" cy="24" r="3" fill="white" opacity="0.5"/>
+        <!-- Flash dot -->
+        <circle cx="33" cy="15" r="2.5" fill="white" opacity="0.7"/>
+        <!-- Brand text -->
+        <text x="46" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f5a623">OnE FoTo</text>
+        <text x="46" y="37" font-family="Arial, sans-serif" font-size="10" fill="#f5a623" opacity="0.9">Accessory | Bokeh</text>
+      </svg>
+
+      <!-- Title: bottom-left -->
+      <div class="bokeh-title">OneFoto<br>bokeh.com</div>
+    </a>
+
+    <!-- ===== OneFotoFilm Panel ===== -->
+    <a href="https://www.onefotofilm.com" class="panel panel-film" target="_blank" rel="noopener noreferrer">
+      <div class="film-content">
+
+        <!-- Film frame logo -->
+        <div class="film-logo">
+          <svg width="96" height="126" viewBox="0 0 96 126" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="OneFotoFilm logo">
+            <!-- Outer frame -->
+            <rect x="1.5" y="1.5" width="93" height="123" rx="4" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+            <!-- Top film perforations -->
+            <rect x="9"  y="8" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="26" y="8" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="43" y="8" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="60" y="8" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="76" y="8" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <!-- Bottom film perforations -->
+            <rect x="9"  y="104" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="26" y="104" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="43" y="104" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="60" y="104" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <rect x="76" y="104" width="11" height="14" rx="2" fill="#1a1a1a"/>
+            <!-- Camera/aperture icon top-left inside frame -->
+            <circle cx="20" cy="36" r="7" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+            <circle cx="20" cy="36" r="2.5" fill="#1a1a1a"/>
+            <!-- ONE FOTO FILM stacked text -->
+            <text x="58" y="40" font-family="Arial Black, Arial" font-size="17" font-weight="900" fill="#1a1a1a" text-anchor="middle">ONE</text>
+            <text x="48" y="64" font-family="Arial Black, Arial" font-size="17" font-weight="900" fill="#1a1a1a" text-anchor="middle">FOTO</text>
+            <text x="48" y="88" font-family="Arial Black, Arial" font-size="17" font-weight="900" fill="#1a1a1a" text-anchor="middle">FILM</text>
+          </svg>
+        </div>
+
+        <!-- Title -->
+        <div class="film-title">OneFotoFilm.com</div>
+      </div>
+    </a>
+
+  </div>
+</body>
+</html>
