@@ -3,74 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Foto</title>
-  <meta name="description" content="One Foto - OneFotoBokeh.com and OneFotoFilm.com">
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-
-    .container {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-    }
-
-    .panel {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: filter 0.3s ease;
-    }
-
-    .panel:hover {
-      filter: brightness(0.88);
-    }
-
-    .panel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    @media (max-width: 767px) {
-      .container {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-      }
-
-      .panel {
-        flex: none;
-        height: 50vh;
-        min-height: 280px;
-      }
-    }
-  </style>
+  <title>ONE FOTO · Photography Hub</title>
+  <meta name="description" content="ONE FOTO — Photography Hub | OneFotoBokeh.com & OneFotoFilm.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
 
-    <a href="https://www.onefotobokeh.com" class="panel" target="_blank" rel="noopener noreferrer">
-      <img src="logo-onefotobokeh.jpg" alt="OneFotoBokeh.com - Accessory | Bokeh">
+  <!-- Film grain overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="aperture-wrap" aria-hidden="true">
+      <svg class="aperture-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+        <!-- Aperture blades -->
+        <path d="M50 50 L50 8 A42 42 0 0 1 82.4 29 Z"     fill="rgba(78,201,122,0.35)"/>
+        <path d="M50 50 L82.4 29 A42 42 0 0 1 91.4 64 Z"  fill="rgba(78,201,122,0.18)"/>
+        <path d="M50 50 L91.4 64 A42 42 0 0 1 66 91.4 Z"  fill="rgba(212,175,55,0.35)"/>
+        <path d="M50 50 L66 91.4 A42 42 0 0 1 34 91.4 Z"  fill="rgba(212,175,55,0.18)"/>
+        <path d="M50 50 L34 91.4 A42 42 0 0 1 8.6 64 Z"   fill="rgba(78,201,122,0.35)"/>
+        <path d="M50 50 L8.6 64 A42 42 0 0 1 17.6 29 Z"   fill="rgba(78,201,122,0.18)"/>
+        <path d="M50 50 L17.6 29 A42 42 0 0 1 50 8 Z"     fill="rgba(212,175,55,0.35)"/>
+        <!-- Center -->
+        <circle cx="50" cy="50" r="13" fill="#080808" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <circle cx="50" cy="50" r="4"  fill="rgba(255,255,255,0.25)"/>
+      </svg>
+    </div>
+
+    <div class="header-brand">
+      <h1 class="logo-text">
+        <span class="logo-one">ONE</span><span class="logo-sep"> </span><span class="logo-foto"><span class="acc-g">FO</span><span class="acc-y">TO</span></span>
+      </h1>
+      <p class="tagline">P H O T O G R A P H Y &nbsp; H U B</p>
+    </div>
+
+    <div class="header-rule" aria-hidden="true">
+      <span class="rule-line"></span>
+      <span class="rule-dot green"></span>
+      <span class="rule-dot yellow"></span>
+      <span class="rule-line"></span>
+    </div>
+  </header>
+
+  <!-- ===== BANNERS ===== -->
+  <main class="banners-wrap" role="main">
+
+    <!-- ─── Bokeh Banner ─── -->
+    <a href="https://www.onefotobokeh.com"
+       class="banner banner--bokeh"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="เยี่ยมชม OneFotoBokeh.com — อุปกรณ์ถ่ายภาพ & โบเก้">
+
+      <div class="banner-glow banner-glow--green" aria-hidden="true"></div>
+      <canvas class="bokeh-canvas" aria-hidden="true"></canvas>
+
+      <div class="banner-inner">
+        <div class="banner-tag">LENS · BOKEH · ACCESSORY</div>
+
+        <div class="logo-frame logo-frame--green">
+          <img src="logo-onefotobokeh.jpg" alt="OneFotoBokeh" class="banner-logo-img">
+        </div>
+
+        <h2 class="banner-title"><span class="acc-g">Bokeh</span></h2>
+        <p class="banner-subtitle">อุปกรณ์เสริมกล้อง &amp; โบเก้</p>
+
+        <div class="banner-url-pill green">
+          <span class="url-dot"></span>
+          onefotobokeh.com
+        </div>
+
+        <div class="banner-cta">
+          <span class="cta-text">เยี่ยมชมเว็บไซต์</span>
+          <span class="cta-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Corner brackets -->
+      <span class="corner tl" aria-hidden="true"></span>
+      <span class="corner tr" aria-hidden="true"></span>
+      <span class="corner bl" aria-hidden="true"></span>
+      <span class="corner br" aria-hidden="true"></span>
     </a>
 
-    <a href="https://www.onefotofilm.com" class="panel" target="_blank" rel="noopener noreferrer">
-      <img src="logo-onefotofilm.jpg" alt="OneFotoFilm.com">
+    <!-- ─── Vertical Divider ─── -->
+    <div class="v-divider" aria-hidden="true">
+      <div class="vd-line"></div>
+      <div class="vd-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="3"/>
+          <line x1="12" y1="2"  x2="12" y2="5"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+          <line x1="2"  y1="12" x2="5"  y2="12"/>
+          <line x1="19" y1="12" x2="22" y2="12"/>
+        </svg>
+      </div>
+      <div class="vd-line"></div>
+    </div>
+
+    <!-- ─── Film Banner ─── -->
+    <a href="https://www.onefotofilm.com"
+       class="banner banner--film"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="เยี่ยมชม OneFotoFilm.com — ฟิล์มอนาล็อก">
+
+      <div class="banner-glow banner-glow--yellow" aria-hidden="true"></div>
+
+      <!-- Film strip perforations -->
+      <div class="film-perfs film-perfs--left"  aria-hidden="true" id="perfsLeft"></div>
+      <div class="film-perfs film-perfs--right" aria-hidden="true" id="perfsRight"></div>
+
+      <div class="banner-inner">
+        <div class="banner-tag">ANALOG · FILM · CLASSIC</div>
+
+        <div class="logo-frame logo-frame--yellow">
+          <img src="logo-onefotofilm.jpg" alt="OneFotoFilm" class="banner-logo-img">
+        </div>
+
+        <h2 class="banner-title"><span class="acc-y">Film</span></h2>
+        <p class="banner-subtitle">ฟิล์มอนาล็อก &amp; คลาสสิก</p>
+
+        <div class="banner-url-pill yellow">
+          <span class="url-dot"></span>
+          onefotofilm.com
+        </div>
+
+        <div class="banner-cta">
+          <span class="cta-text">เยี่ยมชมเว็บไซต์</span>
+          <span class="cta-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Corner brackets -->
+      <span class="corner tl" aria-hidden="true"></span>
+      <span class="corner tr" aria-hidden="true"></span>
+      <span class="corner bl" aria-hidden="true"></span>
+      <span class="corner br" aria-hidden="true"></span>
     </a>
 
-  </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 &nbsp;ONE FOTO</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-domain">one-foto.com</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
