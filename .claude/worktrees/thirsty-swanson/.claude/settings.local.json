@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:\\\\Users\\\\prach\\\\OneDrive\\\\Documents\\\\Claude Code Folder\\\\One-Foto\\\\one-foto\\\\logo-onefotobokeh.jpg\" \"C:\\\\Users\\\\prach\\\\OneDrive\\\\Documents\\\\Claude Code Folder\\\\One-Foto\\\\one-foto\\\\.claude\\\\worktrees\\\\thirsty-swanson\\\\logo-onefotobokeh.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\prach\\\\OneDrive\\\\Documents\\\\Claude Code Folder\\\\One-Foto\\\\one-foto\\\\logo-onefotofilm.jpg\" \"C:\\\\Users\\\\prach\\\\OneDrive\\\\Documents\\\\Claude Code Folder\\\\One-Foto\\\\one-foto\\\\.claude\\\\worktrees\\\\thirsty-swanson\\\\logo-onefotofilm.jpg\")"
+    ]
+  }
+}
